@@ -1,0 +1,24 @@
+{
+  "name": "red-contrib-sesame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sasakid0123/node-red-contrib-sesame.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Sasakid0123/node-red-contrib-sesame/issues"
+  },
+  "homepage": "https://github.com/Sasakid0123/node-red-contrib-sesame#readme",
+  "node-red" : {
+    "nodes": {
+        "control": "node.js"
+    }
+  }
+}
