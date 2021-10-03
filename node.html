@@ -1,6 +1,6 @@
 <script type="text/javascript">
     RED.nodes.registerType('sesame',{
-        category: 'function',
+        category: 'IoT',
         color: '#a6bbcf',
         defaults: {
             name: {value:""}
@@ -13,6 +13,11 @@
         }
     });
 </script>
+
+<div class="form-row">
+    <label for="node-input-apikey"><i class="fa fa-tag"></i> apikey</label>
+    <input type="password" id="node-input-apikey">
+</div>
 
 <script type="text/x-red" data-template-name="sesame">
     <div class="form-row">

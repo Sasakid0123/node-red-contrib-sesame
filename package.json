@@ -20,5 +20,8 @@
     "nodes": {
         "control": "node.js"
     }
+  },
+  "credentials": {
+    "apikey": {"type":"password"}
   }
 }
