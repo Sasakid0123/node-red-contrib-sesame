@@ -21,7 +21,7 @@
         "control": "node.js"
     }
   },
-  "credentials": {
-    "apikey": {"type":"password"}
+  "dependencies": {
+    "node-aes-cmac":"^0.1.1"
   }
 }

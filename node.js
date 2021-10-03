@@ -2,8 +2,10 @@ module.exports = function(RED) {
     function SesameNode(config) {
         RED.nodes.createNode(this,config);
 
-        var apikey = this.credentials.apikey;
+	var aesCmac = require('node-aes-cmac');
+
         var node = this;
+	    var apikey = this.credentials.apikey;
         node.on('input', function(msg) {
 
             let key_secret_hex = msg.payload.sk
@@ -16,7 +18,7 @@ module.exports = function(RED) {
             dateDate.writeUInt32LE(date);
             const message = Buffer.from(dateDate.slice(1, 4));
 
-            let sign = context.global.aesCmac.aesCmac(key, message)
+            let sign = aesCmac.aesCmac(key, message)
 
             let data = {
                 'cmd':msg.cmd,
@@ -31,7 +33,7 @@ module.exports = function(RED) {
             node.send(msg);
         });
     }
-    RED.nodes.registerType("sesame",SesameNode,{
+    RED.nodes.registerType("sesame",SesameNode, {
         credentials: {
             apikey: {type:"password"}
         }

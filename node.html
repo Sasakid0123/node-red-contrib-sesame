@@ -3,9 +3,11 @@
         category: 'IoT',
         color: '#a6bbcf',
         defaults: {
-            name: {value:""},
-            apikey:{value:""}
+            name: {value:""}
         },
+        credentials: {
+	    apikey:{type:"password",required:true},
+	},
         inputs:1,
         outputs:1,
         icon: "bridge-dash.png",
