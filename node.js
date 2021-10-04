@@ -1,14 +1,26 @@
 module.exports = function(RED) {
+    var aesCmac = require('node-aes-cmac');
+    var request = require('request');
+    var hostname = 'https://app.candyhouse.co';
+
+    // function SesameApiKeyNode(n) {
+    //     RED.nodes.createNode(this, n);
+    // }
+    
+    // RED.nodes.registerType('sesame-api-key', SesameApiKeyNode, {credentials: {apikey: {type: 'password'}}});
+    
+
     function SesameNode(config) {
         RED.nodes.createNode(this,config);
 
-	var aesCmac = require('node-aes-cmac');
 
         var node = this;
 	    var apikey = this.credentials.apikey;
+	    var uuid = this.credentials.uuid;
+	    var secretkey = this.credentials.secretkey;
         node.on('input', function(msg) {
 
-            let key_secret_hex = msg.payload.sk
+            let key_secret_hex = secretkey
 
             let base64_history = Buffer.from(msg.user).toString('base64');
             let key = Buffer.from(key_secret_hex, 'hex')
@@ -20,22 +32,33 @@ module.exports = function(RED) {
 
             let sign = aesCmac.aesCmac(key, message)
 
-            let data = {
-                'cmd':msg.cmd,
-                'history':base64_history,
-                'sign':sign,
-                'apikey':apikey
+            var header = {
+                "x-api-key": apikey,
+                "user-agent": "python-requests/2.25.1"        
             }
+    
+            var options = {
+                url: hostname + '/api/sesame2/' + uuid,
+                headers: header,
+                method: 'GET',
+                json: true
+            };
+            request(options, function (error, response, body) {
+                if (!error) {
+                    node.send(body);
+                } else {
+                    node.error(error);
+                }
+            });
 
-            msg.uuid = msg.payload.uuid;
-            msg.payload = data;
-
-            node.send(msg);
         });
     }
     RED.nodes.registerType("sesame",SesameNode, {
         credentials: {
-            apikey: {type:"password"}
+            apikey:{type:"password"},
+            uuid: {type:"text"},
+            secretkey: {type:"password"}
         }
     });
+
 }

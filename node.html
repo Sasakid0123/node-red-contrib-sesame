@@ -1,3 +1,24 @@
+<!-- <script type="text/x-red" data-template-name="ifttt-key">
+    <div class="form-row">
+        <label for="node-config-input-apikey"><i class="fa fa-key"></i> Key</label>
+        <input type="text" id="node-config-input-apikey">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('sesame-api-key',{
+      category: 'config',
+      credentials: {
+        apikey: {type:"password"}
+      },
+      label: function() {
+        return this.credentials? this.credentials.apikey : 'key';
+      }
+    });
+</script> -->
+  
+
+
 <script type="text/javascript">
     RED.nodes.registerType('sesame',{
         category: 'IoT',
@@ -6,8 +27,10 @@
             name: {value:""}
         },
         credentials: {
-	    apikey:{type:"password",required:true},
-	},
+            apikey:{type:"password",required:true},
+            uuid:{type:"text",required:true},
+            secretkey:{type:"password",required:true}
+        },
         inputs:1,
         outputs:1,
         icon: "bridge-dash.png",
@@ -26,7 +49,15 @@
         <label for="node-input-apikey"><i class="fa fa-tag"></i> apikey</label>
         <input type="password" id="node-input-apikey">
     </div>
-    </script>
+    <div class="form-row">
+        <label for="node-input-uuid"><i class="fa fa-tag"></i> uuid</label>
+        <input type="text" id="node-input-uuid">
+    </div>
+    <div class="form-row">
+        <label for="node-input-secretkey"><i class="fa fa-tag"></i> secretkey</label>
+        <input type="password" id="node-input-secretkey">
+    </div>
+</script>
 
 <script type="text/x-red" data-help-name="sesame">
     <p>Control for Sesame smart lock</p>

@@ -22,6 +22,7 @@
     }
   },
   "dependencies": {
-    "node-aes-cmac":"^0.1.1"
+    "node-aes-cmac":"^0.1.1",
+    "request": "^2.74.0"
   }
 }
