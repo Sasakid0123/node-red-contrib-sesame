@@ -18,12 +18,11 @@
   "homepage": "https://github.com/Sasakid0123/node-red-contrib-sesame#readme",
   "node-red" : {
     "nodes": {
-        "control": "node.js"
+        "GetStatus": "./nodes/get/get.js"
     }
   },
   "dependencies": {
     "node-aes-cmac":"^0.1.1",
-    "request": "^2.74.0",
     "axios": "^0.22.0"
   }
 }

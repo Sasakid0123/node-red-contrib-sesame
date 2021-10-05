@@ -1,64 +1,41 @@
-<!-- <script type="text/x-red" data-template-name="ifttt-key">
-    <div class="form-row">
-        <label for="node-config-input-apikey"><i class="fa fa-key"></i> Key</label>
-        <input type="text" id="node-config-input-apikey">
-    </div>
-</script>
-
-<script type="text/javascript">
-    RED.nodes.registerType('sesame-api-key',{
-      category: 'config',
-      credentials: {
-        apikey: {type:"password"}
-      },
-      label: function() {
-        return this.credentials? this.credentials.apikey : 'key';
-      }
-    });
-</script> -->
-  
-
-
-<script type="text/javascript">
-    RED.nodes.registerType('sesame',{
-        category: 'IoT',
-        color: '#a6bbcf',
+<script>
+    RED.nodes.registerType('GetStatus',{
+        category: 'Iot',
+        color: '#01B301',
         defaults: {
             name: {value:""}
         },
         credentials: {
-            apikey:{type:"password",required:true},
-            uuid:{type:"text",required:true},
-            secretkey:{type:"password",required:true}
+            apikey: {type:"password", required:true},
+            uuid:{type:"text", required:true}
         },
-        inputs:1,
-        outputs:1,
-        icon: "bridge-dash.png",
+        inputs: 1,
+        outputs: 1,
+        icon: "comment.png",
+        align: "right",
         label: function() {
-            return this.name||"sesame";
+            return this.name||"GetStatus";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="sesame">
+<script type="text/x-red" data-template-name="GetStatus">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
+
     <div class="form-row">
-        <label for="node-input-apikey"><i class="fa fa-tag"></i> apikey</label>
-        <input type="password" id="node-input-apikey">
+        <label for="node-input-apikey"><i class="icon-tag"></i> apikey</label>
+        <input type="password" id="node-input-apikey" placeholder="apikey">
     </div>
+
     <div class="form-row">
-        <label for="node-input-uuid"><i class="fa fa-tag"></i> uuid</label>
-        <input type="text" id="node-input-uuid">
-    </div>
-    <div class="form-row">
-        <label for="node-input-secretkey"><i class="fa fa-tag"></i> secretkey</label>
-        <input type="password" id="node-input-secretkey">
+        <label for="node-input-uuid"><i class="icon-tag"></i> uuid</label>
+        <input type="text" id="node-input-uuid" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx">
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="sesame">
-    <p>Control for Sesame smart lock</p>
+<script type="text/x-red" data-help-name="GetStatus">
+    <p>Get Sesame Current Status.</p>
 </script>
