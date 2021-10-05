@@ -1,0 +1,7 @@
+node_modules
+.DS_Store
+.vscode
+.env
+env.js
+cheetsheet.md
+package-lock.json
