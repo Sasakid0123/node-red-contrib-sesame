@@ -1,0 +1,47 @@
+<script>
+    RED.nodes.registerType('Control',{
+        category: 'Iot',
+        color: '#01B301',
+        defaults: {
+            name: {value:""}
+        },
+        credentials: {
+            apikey: {type:"password", required:true},
+            uuid:{type:"text", required:true},
+            secretkey:{type:"password", required:true}
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "light.svg",
+        align: "right",
+        label: function() {
+            return this.name||"Control";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Control">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-apikey"><i class="icon-tag"></i> apikey</label>
+        <input type="password" id="node-input-apikey" placeholder="apikey">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-uuid"><i class="icon-tag"></i> uuid</label>
+        <input type="text" id="node-input-uuid" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-secretkey"><i class="icon-tag"></i> secretkey</label>
+        <input type="password" id="node-input-secretkey" placeholder="secretkey">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Control">
+    <p>Control Sesame Smart Lock.</p>
+</script>

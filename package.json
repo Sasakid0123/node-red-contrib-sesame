@@ -18,7 +18,8 @@
   "homepage": "https://github.com/Sasakid0123/node-red-contrib-sesame#readme",
   "node-red" : {
     "nodes": {
-        "GetStatus": "./nodes/get/get.js"
+        "GetStatus": "./nodes/get/get.js",
+        "Control": "./nodes/control/control.js"
     }
   },
   "dependencies": {
