@@ -16,3 +16,36 @@
         <input type="password" id="node-config-input-apikey">
     </div>
 </script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('sesame',{
+        category: 'config',
+        defaults: {
+            name: {value:"",required:true},
+            uuid: {value:"",required:true},
+        },
+        credentials: {
+            secretkey: {type:"text",required:true},
+        },
+        label: function() {
+            return this.name;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="sesame">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-bookmark"></i> name</label>
+        <input type="text" id="node-config-input-name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-uuid"><i class="fa fa-bookmark"></i> uuid</label>
+        <input type="text" id="node-config-input-uuid">
+    </div>
+
+    <div class="form-row">
+        <label for="node-config-input-secretkey"><i class="fa fa-bookmark"></i> secretkey</label>
+        <input type="password" id="node-config-input-secretkey">
+    </div>
+</script>

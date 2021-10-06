@@ -1,4 +1,6 @@
 module.exports = function(RED) {
+    'use strict';
+
     const aesCmac = require('node-aes-cmac');
     const axiosBase = require('axios');
     
@@ -15,9 +17,9 @@ module.exports = function(RED) {
     const main = function(config){
         const node = this;
         RED.nodes.createNode(node, config);
-        const API_KEY = RED.nodes.getNode(config.apikey).credentials.apikey;     
-        const UUID = node.credentials.uuid;
-        const SIGN = cmac(node.credentials.secretkey);
+        const API_KEY = RED.nodes.getNode(config.apikey).credentials.apikey;
+        const UUID = RED.nodes.getNode(config.sesame).uuid;
+        const SIGN = cmac(RED.nodes.getNode(config.sesame).credentials.secretkey);
         
         const axios = axiosBase.create({
             baseURL: `https://app.candyhouse.co`,
@@ -55,10 +57,5 @@ module.exports = function(RED) {
         });
     }
 
-    RED.nodes.registerType("Control", main, {
-        credentials: {
-            uuid: {type:"text"},
-            secretkey: {type:"password"}
-        }
-    });
+    RED.nodes.registerType("Control", main);
 }

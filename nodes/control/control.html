@@ -5,17 +5,14 @@
         defaults: {
             name: {value:""},
             apikey: {type:"apikey"},
-        },
-        credentials: {
-            apikey: {type:"password", required:true},
-            uuid:{type:"text", required:true},
+            sesame: {type:"sesame"},
         },
         inputs: 1,
         outputs: 0,
         icon: "font-awesome/fa-lock",
         align: "right",
         label: function() {
-            return this.name||"Control";
+            return this.name + ":Control"||"Control";
         }
     });
 </script>
@@ -32,13 +29,8 @@
     </div>
 
     <div class="form-row">
-        <label for="node-input-uuid"><i class="icon-tag"></i> uuid</label>
-        <input type="text" id="node-input-uuid" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx">
-    </div>
-
-    <div class="form-row">
-        <label for="node-input-secretkey"><i class="icon-tag"></i> secretkey</label>
-        <input type="password" id="node-input-secretkey" placeholder="secretkey">
+        <label for="node-input-sesame"><i class="icon-tag"></i> sesame</label>
+        <input type="text" id="node-input-sesame" placeholder="sesame name">
     </div>
 </script>
 
