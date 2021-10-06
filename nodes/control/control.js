@@ -50,6 +50,7 @@ module.exports = function(RED) {
                 node.send(msg);                
             } catch (error) {
                 console.log(error);
+                node.error(error);
             }
         });
     }

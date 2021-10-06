@@ -24,13 +24,13 @@ module.exports = (RED) => {
                 node.send(msg);                
             } catch (error) {
                 console.log(error);
+                node.error(error);
             }
         });
     }
 
     RED.nodes.registerType("GetStatus", main, {
         credentials: {
-            apikey:{type:"password"},
             uuid: {type:"text"}
         }
     });
