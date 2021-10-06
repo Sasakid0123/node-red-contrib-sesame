@@ -3,10 +3,10 @@
         category: 'Iot',
         color: '#01B301',
         defaults: {
-            name: {value:""}
+            name: {value:""},
+            apikey: {type:"apikey"},
         },
         credentials: {
-            apikey: {type:"password", required:true},
             uuid:{type:"text", required:true}
         },
         inputs: 1,
@@ -27,7 +27,7 @@
 
     <div class="form-row">
         <label for="node-input-apikey"><i class="icon-tag"></i> apikey</label>
-        <input type="password" id="node-input-apikey" placeholder="apikey">
+        <input type="text" id="node-input-apikey" placeholder="apikey">
     </div>
 
     <div class="form-row">

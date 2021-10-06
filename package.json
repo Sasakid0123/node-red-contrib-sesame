@@ -19,7 +19,8 @@
   "node-red" : {
     "nodes": {
         "GetStatus": "./nodes/get/get.js",
-        "Control": "./nodes/control/control.js"
+        "Control": "./nodes/control/control.js",
+        "Config": "./nodes/config/config.js"
     }
   },
   "dependencies": {

@@ -6,7 +6,7 @@ module.exports = (RED) => {
     const main = function(config){
         const node = this;
         RED.nodes.createNode(node, config);
-        const API_KEY = node.credentials.apikey;
+        const API_KEY = RED.nodes.getNode(config.apikey).credentials.apikey;     
         const UUID = node.credentials.uuid;
         const axios = axiosBase.create({
             baseURL: `https://app.candyhouse.co`,
