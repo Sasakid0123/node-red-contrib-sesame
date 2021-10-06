@@ -1,7 +1,7 @@
 <script>
     RED.nodes.registerType('GetStatus',{
         category: 'Iot',
-        color: '#01B301',
+        color: '#3FADB5',
         defaults: {
             name: {value:""},
             apikey: {type:"apikey"},
@@ -11,8 +11,7 @@
         },
         inputs: 1,
         outputs: 1,
-        icon: "comment.png",
-        align: "right",
+        icon: "font-awesome/fa-lock",
         label: function() {
             return this.name||"GetStatus";
         }

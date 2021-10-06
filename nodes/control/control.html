@@ -1,7 +1,7 @@
 <script>
     RED.nodes.registerType('Control',{
         category: 'Iot',
-        color: '#01B301',
+        color: '#3FADB5',
         defaults: {
             name: {value:""},
             apikey: {type:"apikey"},
@@ -12,7 +12,7 @@
         },
         inputs: 1,
         outputs: 0,
-        icon: "light.svg",
+        icon: "font-awesome/fa-lock",
         align: "right",
         label: function() {
             return this.name||"Control";
