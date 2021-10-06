@@ -19,7 +19,7 @@ module.exports = function(RED) {
         RED.nodes.createNode(node, config);
         const API_KEY = RED.nodes.getNode(config.apikey).credentials.apikey;
         const UUID = RED.nodes.getNode(config.sesame).uuid;
-        const SIGN = cmac(RED.nodes.getNode(config.sesame).credentials.secretkey);
+        const SECRET_KEY = RED.nodes.getNode(config.sesame).credentials.secretkey;
         
         const axios = axiosBase.create({
             baseURL: `https://app.candyhouse.co`,
@@ -46,7 +46,7 @@ module.exports = function(RED) {
                 const res = await axios.post(`/api/sesame2/${UUID}/cmd`,{
                     'cmd':cmd,
                     'history':Buffer.from(msg.payload.user).toString('base64'),
-                    'sign': SIGN
+                    'sign': cmac(SECRET_KEY)
                 });
                 msg.payload = res.data;
                 node.send(msg);                
