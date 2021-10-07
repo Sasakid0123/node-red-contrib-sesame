@@ -10,6 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/Sasakid0123/node-red-contrib-sesame.git"
   },
+  "keywords": [
+    "node-red",
+    "SESAME"
+  ],
   "author": "",
   "license": "MIT",
   "bugs": {
