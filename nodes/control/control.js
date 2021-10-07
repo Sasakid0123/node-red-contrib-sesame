@@ -38,14 +38,23 @@ module.exports = function(RED) {
                 cmd = 82;
             } else if (msg.payload.cmd === 'unlock'){
                 cmd = 83;
+            } else if (msg.payload.cmd === 'toggle'){
+                cmd = 88;
             } else {
-                cmd = 88;   //不定値の場合はトグル操作
+                node.error('cmd Not Support');
+            }
+
+            let user
+            if (typeof msg.payload.user == "undefined" ){
+                user = 'node-red';
+            } else {
+                user = msg.payload.user;
             }
 
             try {
                 const res = await axios.post(`/api/sesame2/${UUID}/cmd`,{
                     'cmd':cmd,
-                    'history':Buffer.from(msg.payload.user).toString('base64'),
+                    'history':Buffer.from(user).toString('base64'),
                     'sign': cmac(SECRET_KEY)
                 });
                 msg.payload = res.data;
