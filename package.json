@@ -1,5 +1,5 @@
 {
-  "name": "red-contrib-sesame",
+  "name": "node-red-contrib-sesame",
   "version": "1.0.0",
   "description": "",
   "main": "node.js",
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/Sasakid0123/node-red-contrib-sesame.git"
   },
   "author": "",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Sasakid0123/node-red-contrib-sesame/issues"
   },
