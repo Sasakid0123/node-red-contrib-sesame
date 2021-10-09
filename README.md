@@ -18,8 +18,8 @@ $ npm install node-red-contrib-sesame
 ## 事前準備
 
 1. 事前に[Sesame ダッシュボード](https://dash.candyhouse.co/)にログインし、API KEYを生成してください。
-1. Sesame 3アプリで操作対象の鍵のUUIDを取得。
-1. 「このセサミの鍵をシェア」からQRコードを表示し、秘密鍵を取得。
+1. Sesame 3アプリで操作対象の鍵のUUIDを取得してください。
+1. 「このセサミの鍵をシェア」からQRコードを表示し、秘密鍵を取得してください。
 
 ## 使い方
 
