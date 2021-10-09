@@ -1,6 +1,7 @@
 # node-red-contrib-sesame
 
 ## Sesame
+
 SesameはCANDY HOUSE のスマートロックです。
 
 node-red-contrib-sesameは[Sesame API](https://doc.candyhouse.co/ja/SesameAPI)を使用するためのNode-REDノードです。
@@ -21,6 +22,7 @@ $ npm install node-red-contrib-sesame
 1. 「このセサミの鍵をシェア」からQRコードを表示し、秘密鍵を取得。
 
 ## 使い方
+
 SesameノードをNode-REDにインストールすると、パレットの「IoT」カテゴリーにSesameノードが追加されます。
 
 ノードをワークスペースにドラッグし、ダブルクリックして、API KEY, UUID, 秘密鍵を設定してください。
@@ -29,15 +31,20 @@ SesameノードをNode-REDにインストールすると、パレットの「IoT
 
 操作データーを以下のようなJSONフォーマットにしてmsg.payloadにセットし、Sesameノードに送信してください。
 
-施錠：
+### 施錠
+
 ```javascript
 {"user":履歴に表示する文字列, "cmd":"lock"}
 ```
-解錠：
+
+### 解錠
+
 ```javascript
 {"user":履歴に表示する文字列, "cmd":"unlock"}
 ```
-トグル：
+
+### トグル
+
 ```javascript
 {"user":履歴に表示する文字列, "cmd":"toggle"}
 ```
