@@ -18,7 +18,7 @@ npm install node-red-contrib-sesame
 ## 初期設定
 
 1. [Sesame ダッシュボード](https://dash.candyhouse.co/)へログインし、API KEYを生成してください。
-1. Sesame 3/4アプリで操作対象の鍵のUUIDを取得してください。
+1. `セサミ、ひらけゴマ ! アプリ` にて、操作対象の鍵のUUIDを取得してください。
 1. 「このセサミの鍵をシェア」からQRコードを表示し、秘密鍵を取得してください。
 1. 上記手順に従って、node-red-contrib-sesameをインストールしてください。
     * インストール後、パレットの「IoT」カテゴリーにSesameノードが追加されます。
