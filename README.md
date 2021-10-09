@@ -21,13 +21,13 @@ $ npm install node-red-contrib-sesame
 1. 「このセサミの鍵をシェア」からQRコードを表示し、秘密鍵を取得。
 
 ## 使い方
-sesameノードをNode-REDにインストールすると、パレットの「IoT」カテゴリーにsesameノードが追加されます。
+SesameノードをNode-REDにインストールすると、パレットの「IoT」カテゴリーにSesameノードが追加されます。
 
 ノードをワークスペースにドラッグし、ダブルクリックして、API KEY, UUID, 秘密鍵を設定してください。
 
 ## 鍵操作
 
-操作データーを以下のようなJSONフォーマットにしてmsg.payloadにセットし、sesameノードに送信してください。
+操作データーを以下のようなJSONフォーマットにしてmsg.payloadにセットし、Sesameノードに送信してください。
 
 施錠：
 ```javascript
