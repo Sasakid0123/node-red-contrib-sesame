@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-sesame",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "node.js",
   "scripts": {
@@ -20,15 +20,15 @@
     "url": "https://github.com/Sasakid0123/node-red-contrib-sesame/issues"
   },
   "homepage": "https://github.com/Sasakid0123/node-red-contrib-sesame#readme",
-  "node-red" : {
+  "node-red": {
     "nodes": {
-        "GetStatus": "./nodes/get/get.js",
-        "Control": "./nodes/control/control.js",
-        "Config": "./nodes/config/config.js"
+      "GetStatus": "./nodes/get/get.js",
+      "Control": "./nodes/control/control.js",
+      "Config": "./nodes/config/config.js"
     }
   },
   "dependencies": {
-    "node-aes-cmac":"^0.1.1",
+    "node-aes-cmac": "^0.1.1",
     "axios": "^0.22.0"
   }
 }
